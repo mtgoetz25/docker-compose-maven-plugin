@@ -30,6 +30,9 @@ public class DockerComposePullMojo extends AbstractDockerComposeMojo {
             args.add("--ignore-pull-failures");
         }
 
+        if (services != null && !services.isEmpty())
+            args.addAll(services);
+
         super.execute(args);
     }
 }
